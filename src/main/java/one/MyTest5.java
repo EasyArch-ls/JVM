@@ -20,17 +20,38 @@ public class MyTest5 {
        // System.out.println(MyStudent5.b1);
     }
 }
+/*interface MyTeacher5{
+    int a=5;
+    int a1=new Random().nextInt(5);
+    public static Thread t=new Thread(){
+        {
+            System.out.println("xx");
+        }
+    };
+
+}*/
+
 interface MyTeacher5{
     int a=5;
     int a1=new Random().nextInt(5);
-}
-interface MyStudent5 extends MyTeacher5{
-    int b=6;
-    int b1=new Random().nextInt(5);
+    public static Thread t=new Thread(){
+        {
+            System.out.println("xx");
+        }
+    };
+
 }
 
-/*
-class MyStudent5 extends MyTeacher5{
-    int b=6;
+/*interface MyStudent5 extends MyTeacher5 {
+    int b = 6;
+    int b1 = new Random().nextInt(5);
+}*/
+/*class MyStudent5 extends MyTeacher5{
+    static int b=6;
     int b1=new Random().nextInt(5);
 }*/
+
+class MyStudent5 implements MyTeacher5{
+    static int b=6;
+    int b1=new Random().nextInt(5);
+}
