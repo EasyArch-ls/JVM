@@ -23,4 +23,7 @@ class My9{
     static {
         System.out.println("c9");
     }
+    public My9(){
+        System.out.println("aaaaaaaaaa");
+    }
 }
