@@ -15,7 +15,7 @@ public class Mytest11 {
     public static void main(String[] args) throws IOException {
         ClassLoader loader=Thread.currentThread().getContextClassLoader();
         System.out.println(loader);
-        String resourcename="one/Mytest11.class";
+        String resourcename="one/Mytest11.class结构.adoc";
         Enumeration<URL> enumeration=loader.getResources(resourcename);
         while (enumeration.hasMoreElements()){
             System.out.println(enumeration.nextElement());
