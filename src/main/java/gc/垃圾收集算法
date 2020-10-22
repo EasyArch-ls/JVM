@@ -1,0 +1,12 @@
+### 分代假说
+* 弱分代假说(Weak Generational Hypothesis):绝大多数对象都是朝生夕灭的
+* 强分代假说(Strong Generational Hypothesis):熬过越多次垃圾收集过程的对象就越难以消
+亡。
+* 跨代引用假说(Intergenerational Reference Hypothesis):跨代引用相对于同代引用来说仅占极
+少数。
+- 有了跨代引用假说，也不必浪费空间专门记录
+每一个对象是否存在及存在哪些跨代引用,只需在新生代上建立一个全局的数据结构(该结构被称
+为“记忆集”,Remembered Set)。这个结构把老年代划分成若干小块,标识出老年代的哪一块内存会
+存在跨代引用。此后当发生M inor GC时,只有包含了跨代引用的小块内存里的对象才会被加入到GC
+Roots进行扫描。
+- 记忆集是一种抽象的概念，最经典的实现是“#_*卡表*_#”(Card Table)
