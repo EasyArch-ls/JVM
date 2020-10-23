@@ -85,7 +85,7 @@ CARD_TABLE [this address >> 9] = 0;
 * 在1989年,Andrew Appel针对具备“朝生夕灭”特点的对象(98%的对象熬不过第一轮收集),提出了一种更优化的半区复制分代策
 略,现在称为“Appel式回收”。
 - HotSpot虚拟机的Serial、ParNew等新生代收集器均采用了这种策略来设
-计新生代的内存布局 [1] 。Appel式回收的具体做法是把新生代分为一块较大的Eden空间和两块较小的
+计新生代的内存布局 。Appel式回收的具体做法是把新生代分为一块较大的Eden空间和两块较小的
 Survivor空间,每次分配内存只使用Eden和其中一块Survivor。发生垃圾搜集时,将Eden和Survivor中仍
 然存活的对象一次性复制到另外一块Survivor空间上,然后直接清理掉Eden和已用过的那块Survivor空间。HotSpot虚拟机默认Eden和Survivor的大小比例是8∶1,也即每次新生代中可用内存空间为整个新
 生代容量的90%(Eden的80%加上一个Survivor的10%),只有一个Survivor空间,即10%的新生代是会
